@@ -82,7 +82,8 @@ fun ProjectCard() {
         item { InstallButton() }
         item { Spacer(modifier = Modifier.height(20.dp))}
     }, modifier = Modifier
-        .size(375.dp, 1240.dp)
+        .height(1240.dp)
+        .fillMaxWidth()
         .background(color = Color(0xFF050B18)))
 }
 
@@ -233,7 +234,7 @@ fun Description() {
         color = Color(0xFFEEF2FB),
         fontFamily = FontFamily(Font(R.font.sk_modernist_regular)),
         modifier = Modifier
-            .height(76.dp)
+            .height(70.dp)
             .fillMaxWidth()
             .padding(start = 24.dp, end = 24.dp)
     )
@@ -256,13 +257,6 @@ fun PreviewDota() {
                             .height(125.dp)
                             .width(275.dp)
                             .clip(RoundedCornerShape(16.dp))
-                    )
-                    Image(
-                        painter = painterResource(id = R.drawable.play),
-                        contentDescription = "play",
-                        modifier = Modifier
-                            .size(50.dp)
-                            .align(Alignment.Center)
                             .clickable {
                                 Toast
                                     .makeText(
@@ -272,6 +266,13 @@ fun PreviewDota() {
                                     )
                                     .show()
                             }
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.play),
+                        contentDescription = "play",
+                        modifier = Modifier
+                            .size(50.dp)
+                            .align(Alignment.Center)
                     )
                 }
             }
@@ -308,7 +309,7 @@ fun PreviewDota() {
                 }
             }
         }, modifier = Modifier
-            .height(128.dp)
+            .height(140.dp)
             .fillMaxWidth()
             .padding(start = 8.dp, end = 8.dp)
     )
