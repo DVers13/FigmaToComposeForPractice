@@ -76,7 +76,7 @@ fun MessageCard() {
         item { InstallButton() }
         item { Spacer(modifier = Modifier.height(20.dp))}
     }, modifier = Modifier
-        .size(375.dp, 1226.dp)
+        .size(375.dp, 1240.dp)
         .background(color = Color(0xFF050B18)))
 }
 
@@ -231,7 +231,9 @@ fun PreviewDota() {
     LazyRow(
         content = {
             item {
-                Box(modifier = Modifier.padding(start = 10.dp, end = 5.dp).size(240.dp, 120.dp)){
+                Box(modifier = Modifier
+                    .padding(start = 10.dp, end = 5.dp)
+                    .size(240.dp, 120.dp)){
                     Image(
                         painter = painterResource(id = R.drawable.example1),
                         contentDescription = "example1",
@@ -247,12 +249,22 @@ fun PreviewDota() {
                         modifier = Modifier
                             .size(50.dp)
                             .align(Alignment.Center)
-                            .clickable { Toast.makeText(contextForToast, "Video. Enjoy the show!", Toast.LENGTH_SHORT).show() }
+                            .clickable {
+                                Toast
+                                    .makeText(
+                                        contextForToast,
+                                        "Video. Enjoy the show!",
+                                        Toast.LENGTH_SHORT
+                                    )
+                                    .show()
+                            }
                     )
                 }
             }
             item {
-                Box(modifier = Modifier.padding(start = 5.dp, end = 10.dp).size(240.dp, 120.dp)){
+                Box(modifier = Modifier
+                    .padding(start = 5.dp, end = 10.dp)
+                    .size(240.dp, 120.dp)){
                     Image(
                         painter = painterResource(id = R.drawable.example2),
                         contentDescription = "example2",
@@ -261,7 +273,15 @@ fun PreviewDota() {
                             .height(125.dp)
                             .width(275.dp)
                             .clip(RoundedCornerShape(16.dp))
-                            .clickable { Toast.makeText(contextForToast, "Another video =)", Toast.LENGTH_SHORT).show() }
+                            .clickable {
+                                Toast
+                                    .makeText(
+                                        contextForToast,
+                                        "Another video =)",
+                                        Toast.LENGTH_SHORT
+                                    )
+                                    .show()
+                            }
 
                     )
                     Image(
@@ -294,6 +314,7 @@ fun ReviewRatingsicon() {
                     .size(80.dp, 60.dp)
                     .padding(top = 15.dp)
             ){
+                Column() {
                 Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
@@ -327,6 +348,9 @@ fun ReviewRatingsicon() {
                         modifier = Modifier
                             .size(9.dp)
                     )}
+                    Spacer(modifier = Modifier.height(3.dp))
+                    Text("70M Reviews", fontSize = 12.sp, color = Color(0xFFA8ADB7))
+                }
             }
         }
     }
@@ -362,7 +386,11 @@ fun Com() {
             modifier = Modifier.padding(start = 24.dp, end = 24.dp)
         )
         Spacer(modifier = Modifier.height(10.dp))
-        Box(modifier = Modifier.fillMaxWidth().height(2.dp).padding(start = 35.dp, end = 35.dp).background(color = Color(0xFF1A1F29)))
+        Box(modifier = Modifier
+            .fillMaxWidth()
+            .height(2.dp)
+            .padding(start = 35.dp, end = 35.dp)
+            .background(color = Color(0xFF1A1F29)))
         Spacer(modifier = Modifier.height(10.dp))
         Row(
             modifier = Modifier
