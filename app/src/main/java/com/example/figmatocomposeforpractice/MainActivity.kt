@@ -43,13 +43,13 @@ class MainActivity : ComponentActivity() {
                     darkIcons = false
                 )
             }
-            MessageCard()
+            ProjectCard()
         }
     }
 }
 
 @Composable
-fun MessageCard() {
+fun ProjectCard() {
     LazyColumn(content = {
         item {
             Box {
@@ -438,6 +438,6 @@ fun InstallButton() {
 
 @Preview
 @Composable
-fun PreviewMessageCard() {
-    MessageCard()
+fun PreviewProjectCard() {
+    ProjectCard()
 }
