@@ -26,6 +26,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
@@ -66,7 +71,8 @@ fun ProjectCard() {
                 "Review & Ratings", modifier = Modifier
                     .size(200.dp, 30.dp)
                     .padding(start = 24.dp, top = 6.dp), color = Color(0xFFEEF2FB),
-                fontSize = 16.sp
+                fontSize = 16.sp,
+                fontFamily = FontFamily(Font(R.font.sk_modernist_bold))
             )
         }
         item { ReviewRatingsicon() }
@@ -115,7 +121,8 @@ fun Logo() {
             Text(
                 "DoTA 2",
                 color = Color.White,
-                fontSize = 26.sp
+                fontSize = 26.sp,
+                fontWeight = FontWeight.Bold
             )
             Row(
                 verticalAlignment = Alignment.CenterVertically
@@ -150,8 +157,12 @@ fun Logo() {
                     modifier = Modifier
                         .size(10.dp)
                 )
-                Text("70M", fontSize = 10.sp, modifier = Modifier.padding(start = 5.dp),
-                color = Color(0xFF45454D))
+                Text("70M",
+                    fontSize = 10.sp,
+                    modifier = Modifier
+                        .padding(start = 5.dp),
+                color = Color(0xFF45454D),
+                    fontFamily = FontFamily(Font(R.font.sk_modernist_regular)))
             }
 
         }
@@ -179,7 +190,7 @@ fun Marks() {
         {
             Text("MOBA", fontSize = 7.sp,
             color = Color(0xFF41A0E7),
-                modifier = Modifier
+                fontFamily = FontFamily(Font(R.font.montserrat_medium))
             )
         }
         Button(
@@ -194,7 +205,8 @@ fun Marks() {
         )
         {
             Text("MULTIPLAYER", fontSize = 7.sp,
-                color = Color(0xFF41A0E7))
+                color = Color(0xFF41A0E7),
+                fontFamily = FontFamily(Font(R.font.montserrat_medium)))
         }
         Button(onClick = {
             Toast.makeText(contextForToast, "Move to STRATEGY!", Toast.LENGTH_SHORT).show()
@@ -206,7 +218,8 @@ fun Marks() {
             shape = RoundedCornerShape(20.dp))
         {
             Text("STRATEGY", fontSize = 7.sp,
-                color = Color(0xFF41A0E7))
+                color = Color(0xFF41A0E7),
+                fontFamily = FontFamily(Font(R.font.montserrat_medium)))
         }
     }
 }
@@ -217,8 +230,9 @@ fun Description() {
     Text(
         "Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the \"Ancient\", whilst defending their own.",
         fontSize = 12.sp,
-        color = Color(0xFFEEF2FB)
-        ,modifier = Modifier
+        color = Color(0xFFEEF2FB),
+        fontFamily = FontFamily(Font(R.font.sk_modernist_regular)),
+        modifier = Modifier
             .height(76.dp)
             .fillMaxWidth()
             .padding(start = 24.dp, end = 24.dp)
@@ -304,10 +318,16 @@ fun PreviewDota() {
 @Composable
 fun ReviewRatingsicon() {
     Box(
-        modifier = Modifier.size(200.dp, 58.dp)
+        modifier = Modifier.height(58.dp).fillMaxWidth().padding(top = 5.dp)
     ) {
         Row() {
-            Text("4.9", fontSize = 48.sp, color = Color.White, modifier = Modifier.padding(start = 24.dp, end = 24.dp))
+            Text("4.9",
+                fontSize = 48.sp,
+                color = Color.White,
+                modifier = Modifier
+                    .padding(start = 24.dp, end = 24.dp),
+                fontFamily = FontFamily(Font(R.font.sk_modernist_bold))
+            )
 
             Box(
                 modifier = Modifier
@@ -362,7 +382,7 @@ fun Com() {
     Column() {
         Row(
             modifier = Modifier
-                .height(58.dp)
+                .height(50.dp)
                 .fillMaxWidth()
                 .padding(start = 24.dp, end = 24.dp)
         ) {
@@ -376,14 +396,17 @@ fun Com() {
                     .clip(RoundedCornerShape(16.dp))
             )
             Column() {
-                Text("Auguste Conte", color = Color.White, modifier = Modifier.padding(start = 10.dp), fontSize = 16.sp)
-                Text("February 14, 2019", color = Color(0xFFFFFFFF).copy(alpha = 0.4f), modifier = Modifier.padding(start = 10.dp), fontSize = 12.sp)
+                Text("Auguste Conte", color = Color.White, modifier = Modifier.padding(start = 10.dp), fontSize = 16.sp,
+                    fontFamily = FontFamily(Font(R.font.sk_modernist_regular)))
+                Text("February 14, 2019", color = Color(0xFFFFFFFF).copy(alpha = 0.4f), modifier = Modifier.padding(start = 10.dp), fontSize = 12.sp,
+                    fontFamily = FontFamily(Font(R.font.sk_modernist_regular)))
 
             }
         }
         Text("“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”",
         color = Color(0xFFA8ADB7),
-            modifier = Modifier.padding(start = 24.dp, end = 24.dp)
+            modifier = Modifier.padding(start = 24.dp, end = 24.dp),
+            fontFamily = FontFamily(Font(R.font.sk_modernist_regular))
         )
         Spacer(modifier = Modifier.height(10.dp))
         Box(modifier = Modifier
@@ -394,7 +417,7 @@ fun Com() {
         Spacer(modifier = Modifier.height(10.dp))
         Row(
             modifier = Modifier
-                .height(58.dp)
+                .height(50.dp)
                 .fillMaxWidth()
                 .padding(start = 24.dp, end = 24.dp)
         ) {
@@ -408,14 +431,17 @@ fun Com() {
                     .clip(RoundedCornerShape(16.dp))
             )
             Column() {
-                Text("Jang Marcelino", color = Color.White, modifier = Modifier.padding(start = 10.dp), fontSize = 16.sp)
-                Text("February 14, 2019", color = Color(0xFFFFFFFF).copy(alpha = 0.4f), modifier = Modifier.padding(start = 10.dp), fontSize = 12.sp)
+                Text("Jang Marcelino", color = Color.White, modifier = Modifier.padding(start = 10.dp), fontSize = 16.sp,
+                    fontFamily = FontFamily(Font(R.font.sk_modernist_regular)))
+                Text("February 14, 2019", color = Color(0xFFFFFFFF).copy(alpha = 0.4f), modifier = Modifier.padding(start = 10.dp), fontSize = 12.sp,
+                    fontFamily = FontFamily(Font(R.font.sk_modernist_regular)))
 
             }
         }
         Text("“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”",
             color = Color(0xFFA8ADB7),
-        modifier = Modifier.padding(start = 24.dp, end = 24.dp))
+        modifier = Modifier.padding(start = 24.dp, end = 24.dp),
+            fontFamily = FontFamily(Font(R.font.sk_modernist_regular)))
     }
 }
 
